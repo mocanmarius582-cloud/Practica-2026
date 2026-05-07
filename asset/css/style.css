@@ -17,7 +17,9 @@ body {
 }
 
 header {
-  display: flex;
+  display: grid;
+  /* 1fr fractie din spatiul liber */
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: center;
   padding: 24px 30px;
