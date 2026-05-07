@@ -41,6 +41,13 @@ nav a {
   text-decoration: none;
   font-size: 1.05rem;
   border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2);
 }
 
 .top-text {
@@ -68,7 +75,7 @@ main {
   margin-bottom: 18px;
   font-size: 1rem;
 }
-
+/* butoanele din parte */
 .sidebar button {
   width: 100%;
   margin-bottom: 14px;
@@ -79,9 +86,17 @@ main {
   font-size: 1rem;
   font-family: "Brush Script MT", cursive;
   cursor: pointer;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.16);
 }
 
 .content {
+   flex-direction: column-reverse;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -114,15 +129,28 @@ main {
   padding: 0;
   margin: 0;
 }
+/* butoanele din partea de sus */
 .sit-nav a {
   display: block;
   padding: 12px 20px;
   border-radius: 16px;
-  text-decoration: none ;
+  text-decoration: none;
   color: #f66600;
   font-weight: 600;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .sit-nav a:hover, .sit-nav a.active {
- background: #d07f1c;
+  background: #d07f1c;
   color: #45290c;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+}
+/* hover pe carduri */
+.service-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
