@@ -1,41 +1,215 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8">
   <title>Design Interior</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
   <div class="page">
+
     <header>
+
       <nav class="site-nav" aria-label="Primary">
-          <a href="#">Acasă</a>
-          <a href="#">Servicii</a>
-          <a href="#">Despre</a>
-          <a href="#">Contact</a>
-        
+
+        <a href="Paginile saitului/pagina 1.html">Amplasarea proiectelor</a>
+        <a href="Paginile saitului/pagina 2.html">Servicii</a>
+        <a href="Paginile saitului/pagina 3.html">Despre</a>
+        <a href="Paginile saitului/pagina 4.html">Contact</a>
+
       </nav>
-      <div class="top-text">
-        dizainul este ceva specific<br>
-        dar important pentru noi
+
+      <div class="Right-container">
+
+        <fieldset>
+
+          <legend>Date de contact</legend>
+
+          <p>Telefon: 0721 123 456</p>
+
+          <p>Email: info@designinterior.ro</p>
+
+        </fieldset>
+
       </div>
+
+      <div class="top-text">
+
+        dizainul este ceva specific
+        <br>
+        dar important pentru noi
+
+      </div>
+
     </header>
 
     <main>
+
       <aside class="sidebar">
+
         <h2>saitul nostru vă poate oferi:</h2>
+
         <button>Inspirație</button>
         <button>Hobby</button>
         <button>Loc de lucru</button>
+
+        
       </aside>
 
       <div class="content">
+
         <p class="description">
-         Bine ati venit pe situl nostru aici puteti gasi nu doar lucrari care ar pute sa va inspire sa va ajute la gasirea unui lucru pe placul
-         vostru aici veti putea crea proiecte pentru ca sa le postati in media onlin gasind prieteni si colaboratori pentru proiectele voastre
+
+          Bine ati venit pe situl nostru aici puteti gasi nu doar lucrari
+          care ar pute sa va inspire sa va ajute la gasirea unui lucru
+          pe placul vostru aici veti putea crea proiecte pentru ca sa
+          le postati in media online gasind prieteni si colaboratori
+          pentru proiectele voastre
+
         </p>
+<iframe
+    src="https://player.vimeo.com/video/76979871"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
+
+        <div class="form-grid">
+
+          <div class="form-section">
+
+            <form>
+
+              <fieldset>
+
+                <legend>Date personale</legend>
+
+                <div class="input-box">
+                  <input
+                    type="text"
+                    placeholder=" "
+                    autocomplete="given-name"
+                    required
+                  >
+
+                  <label>
+                    Nume complet
+                  </label>
+                </div>
+
+               <div class="input-box">
+
+    <input
+    type="email"
+    placeholder=" "
+    autocomplete="email"
+    required
+  >
+  <label>Email</label>
+<span class="error-message">
+    Vă rugăm să introduceți un email valid.
+</span>
+  
+</div>
+                >
+
+                <input
+                  type="tel"
+                  placeholder="Telefon"
+                  autocomplete="tel"
+                >
+
+              </fieldset>
+
+              <fieldset>
+
+                <legend>Mesaj / Subiect</legend>
+
+                <select required>
+
+                  <option value="">
+                    Alege subiectul
+                  </option>
+
+                  <option>
+                    Design interior
+                  </option>
+
+                  <option>
+                    Mobilier
+                  </option>
+
+                  <option>
+                    Consultanță
+                  </option>
+
+                </select>
+
+                <textarea
+                  id="mesaj"
+                  maxlength="150"
+                  placeholder="Scrie mesajul..."
+                  autocomplete="off"
+                ></textarea>
+
+                <div class="char-counter">
+
+                  Caractere rămase:
+                  <span id="counter">150</span>
+
+                </div>
+
+              </fieldset>
+
+              <button type="submit"
+              class="submit-btn">
+                Trimite
+              </button>
+
+            </form>
+
+          </div>
+
+          <div class="map-section">
+
+            <iframe
+              src="https://maps.google.com/maps?q=Chisinau&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy">
+            </iframe>
+
+          </div>
+
+        </div>
+
       </div>
+
     </main>
+
   </div>
+
+  <script>
+
+    const textarea =
+      document.getElementById("mesaj");
+
+    const counter =
+      document.getElementById("counter");
+
+    textarea.addEventListener("input", function () {
+
+      const remaining =
+        150 - textarea.value.length;
+
+      counter.textContent = remaining;
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>

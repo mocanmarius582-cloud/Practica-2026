@@ -11,40 +11,54 @@
     }
 
     body {
+
       background-color: #f37210;
+
       font-family: Arial, sans-serif;
 
       display: flex;
-      flex-direction: column;
 
-      align-items: center;
       justify-content: center;
 
+      align-items: center;
+
       height: 100vh;
+
       margin: 0;
     }
 
     form {
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
+      gap: 10px;
 
       background-color: var(--theme-color);
 
       padding: 20px;
+
       border-radius: 10px;
 
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
-    input {
+    input,
+    button {
+
       padding: 10px;
+
       font-size: 16px;
-      margin-bottom: 10px;
+
+      width: 250px;
     }
 
     button {
-      padding: 10px 20px;
+
+      cursor: pointer;
     }
 
   </style>
@@ -52,30 +66,24 @@
 
 <body>
 
-  <h1>Logare</h1>
-
   <form>
 
-    <h3>Introduceti Numele vostru</h3>
+    <h1>Logare</h1>
 
     <input
       type="text"
-      pattern="[a-z0-9 ]{5,}"
       placeholder="Nume și prenume"
+      pattern="[A-Za-zĂÂÎȘȚăâîșț ]{5,}"
       required
     >
-
-    <h3>Introduceti Parola</h3>
 
     <input
       type="password"
+      placeholder="Parola"
       pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}"
       title="Minim 8 caractere, o literă mare și un simbol special"
-      placeholder="Parola"
       required
     >
-
-    <h3>Alegeți data</h3>
 
     <input
       type="date"
@@ -84,7 +92,7 @@
       required
     >
 
-    <h3>Culoare Temă</h3>
+    <label>Culoare Temă</label>
 
     <input
       type="color"
@@ -99,7 +107,8 @@
 
   <script>
 
-    const colorpicker = document.getElementById("ThemeColor");
+    const colorpicker =
+      document.getElementById("ThemeColor");
 
     colorpicker.addEventListener("input", function () {
 

@@ -1,0 +1,266 @@
+:root {
+    --p-blue-h: 210;
+    --p-blue-s: 90%;
+    --p-blue-l: 55%;
+
+    --color-brand:
+        hsl(
+            var(--p-blue-h),
+            var(--p-blue-s),
+            var(--p-blue-l)
+        );
+
+    --color-bg-site: #ffffff;
+    --color-text-main: #1a1a1a;
+
+    --ui-card-bg: rgba(255,255,255,0.9);
+
+    --ui-card-border: var(--color-brand);
+
+    --ui-card-shadow:
+        0 10px 30px rgba(0,0,0,0.1);
+}
+
+body.dark-theme{
+    --color-bg-site: #0f172a;
+
+    --color-text-main: #ffffff;
+
+    --ui-card-bg: rgba(30,41,59,0.9);
+
+    --ui-card-shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+}
+
+body{
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
+        ),
+        url("../img/fundal.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: var(--color-bg-site);
+
+    color: var(--color-text-main);
+
+    transition: 0.3s;
+
+    min-height: 100vh;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+}
+
+/* LOGO 3D */
+
+.logo-bg{
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+
+    perspective: 1200px;
+
+    z-index: -1;
+}
+
+.logo-card{
+    width: 220px;
+    height: 220px;
+
+    border-radius: 40px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(59,130,246,0.35),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.18),
+            rgba(30,41,59,0.15)
+        );
+
+    border: 1px solid rgba(59,130,246,0.4);
+
+    box-shadow:
+        0 30px 80px rgba(15,23,42,0.18);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.1s linear;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo-card::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.18),
+            transparent 50%
+        );
+}
+
+.logo-img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 40px;
+
+
+    transform-style: preserve-3d;
+}
+
+/* CARD */
+
+.card{
+    background: var(--ui-card-bg);
+
+    border: 2px solid var(--ui-card-border);
+
+    box-shadow: var(--ui-card-shadow);
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    width: min(560px, 100%);
+    max-width: 560px;
+
+    backdrop-filter: blur(6px);
+}
+
+/* BUTTONS */
+
+button,
+.theme-toggle-btn{
+    margin-bottom: 20px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    background: var(--color-brand);
+
+    color: white;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+button:hover,
+.theme-toggle-btn:hover{
+    transform: translateY(-3px);
+
+    background:
+        hsl(
+            var(--p-blue-h),
+            var(--p-blue-s),
+            40%
+        );
+}
+
+/* PROIECTE */
+
+.proiecte{
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+    margin-left: 10px;
+
+    flex-wrap: wrap;
+}
+
+.btn-proiect{
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #dbe8ff;
+
+    color: #3b6cff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-proiect:hover{
+    background: #4d7cff;
+
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+/* TRIMITE */
+
+.btn-trimite{
+    margin-top: 25px;
+    margin-left: 10px;
+
+    padding: 15px 35px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #4d7cff;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-trimite:hover{
+    transform: scale(1.05);
+
+    background: #2f64ff;
+}
