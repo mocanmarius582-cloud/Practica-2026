@@ -5,8 +5,9 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Audit realizat de: Mocan Marius | Ziua 9 -->
 
@@ -23,6 +24,14 @@
   <meta
     name="robots"
     content="index, follow">
+
+  <meta
+    name="theme-color"
+    content="#ffffff">
+
+  <meta
+    name="color-scheme"
+    content="light">
 
   <link
     rel="canonical"
@@ -44,11 +53,22 @@
 
   <meta
     property="og:image"
-    content="assets/img/preview.jpg">
+    content="assets/img/preview.webp">
 
   <meta
     property="og:url"
     content="https://www.designinterior.ro/">
+
+  <!-- PERFORMANCE -->
+
+  <link
+    rel="preload"
+    as="image"
+    href="assets/img/hero-banner.webp">
+
+  <link
+    rel="preconnect"
+    href="https://player.vimeo.com">
 
   <!-- Security -->
 
@@ -61,12 +81,28 @@
     style-src 'self' 'unsafe-inline';
     ">
 
-  <!-- Favicon -->
+  <!-- FAVICON PACK -->
 
   <link
     rel="icon"
     type="image/png"
-    href="favicon.png">
+    sizes="32x32"
+    href="assets/favicon/favicon-32.png">
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="assets/favicon/favicon-16.png">
+
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="assets/favicon/apple-touch-icon.png">
+
+  <link
+    rel="manifest"
+    href="site.webmanifest">
 
   <!-- CSS -->
 
@@ -89,6 +125,20 @@
       <h1>
         Design Interior Modern
       </h1>
+
+      <!-- HERO SECTION -->
+
+<section class="hero-section">
+
+  <h2>
+    Design interior modern pentru spații elegante
+  </h2>
+
+  <p>
+    Soluții creative și moderne pentru proiectele tale de design interior.
+  </p>
+
+</section>
 
       <!-- NAVIGATION -->
 
@@ -130,7 +180,14 @@
           </p>
 
           <p>
-            Email: info@designinterior.ro
+
+            <a
+              href="mailto:info@designinterior.ro">
+
+              info@designinterior.ro
+
+            </a>
+
           </p>
 
         </fieldset>
@@ -220,8 +277,72 @@
           title="Video Design Interior"
           src="https://player.vimeo.com/video/76979871"
           sandbox="allow-scripts allow-same-origin"
-          allowfullscreen>
+          loading="lazy"
+          width="800"
+          height="450"
+          allowfullscreen="allowfullscreen">
         </iframe>
+
+        <!-- GALLERY -->
+        <!-- Asset Optimization: WebP + Lazy Loading implemented by Mocan Marius -->
+
+        <section class="gallery">
+
+          <!-- IMAGE 1 -->
+
+          <picture>
+
+            <source
+              srcset="assets/img/project-1.webp"
+              type="image/webp">
+
+            <img
+              src="assets/img/project-1.jpg"
+              alt="Design modern pentru sufragerie"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="300">
+
+          </picture>
+
+          <!-- IMAGE 2 -->
+
+          <picture>
+
+            <source
+              srcset="assets/img/project-2.webp"
+              type="image/webp">
+
+            <img
+              src="assets/img/project-2.jpg"
+              alt="Amenajare modernă pentru birou"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="300">
+
+          </picture>
+
+          <!-- IMAGE 3 -->
+
+          <picture>
+
+            <source
+              srcset="assets/img/project-3.webp"
+              type="image/webp">
+
+            <img
+              src="assets/img/project-3.jpg"
+              alt="Dormitor minimalist și elegant"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="300">
+
+          </picture>
+
+        </section>
 
         <!-- FORM GRID -->
 
@@ -351,8 +472,7 @@
                   maxlength="150"
                   placeholder="Scrie mesajul..."
                   autocomplete="off"
-                  required>
-                </textarea>
+                  required></textarea>
 
                 <!-- COUNTER -->
 
@@ -390,7 +510,9 @@
               title="Locația companiei pe Google Maps"
               src="https://maps.google.com/maps?q=Chisinau&t=&z=13&ie=UTF8&iwloc=&output=embed"
               sandbox="allow-scripts allow-same-origin"
-              loading="lazy">
+              loading="lazy"
+              width="600"
+              height="450">
             </iframe>
 
           </section>
@@ -409,6 +531,21 @@
 
         &copy; 2026 Mocan Marius.
         Toate drepturile rezervate.
+
+      </p>
+
+      <!-- EXTERNAL LINK -->
+
+      <p>
+
+        <a
+          href="https://www.w3.org/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Validare W3C
+
+        </a>
 
       </p>
 
@@ -436,6 +573,8 @@
     });
 
   </script>
+
+  <!-- Final Quality Audit: Mobile Performance Optimized by Mocan Marius -->
 
 </body>
 
