@@ -1,3 +1,6 @@
+# dns_zone.txt (versiunea modificată)
+
+```dns
 ; =========================================================================
 ; RFC 1035 ZONE FILE - CONFIGURARE DNS ENTERPRISE
 ; Domeniu Autoritar: mocan-marius.rc251.utm.md
@@ -5,35 +8,66 @@
 ; =========================================================================
 
 $ORIGIN mocan-marius.rc251.utm.md.
-$TTL 3600
+$TTL 3600 ; TTL Implicit Global: 1 oră
 
+; -------------------------------------------------------------------------
+; 1. ÎNREGISTRAREA START OF AUTHORITY (SOA)
+; -------------------------------------------------------------------------
 @   IN  SOA  ns1.rc251.utm.md. admin.mocan-marius.rc251.utm.md. (
-            2026051501
+            2026051502 ; Serial incrementat după modificarea fișierului
             7200
             3600
             1209600
             1800
 )
 
+; -------------------------------------------------------------------------
+; 2. NAMESERVERS (NS)
+; -------------------------------------------------------------------------
 @   IN  NS   ns1.rc251.utm.md.
 @   IN  NS   ns2.rc251.utm.md.
 
+; -------------------------------------------------------------------------
+; 3. ADRESE IP PRIMARE (A Records)
+; -------------------------------------------------------------------------
 @   IN  A    75.2.60.5
 @   IN  A    99.83.190.102
 
-www IN  CNAME @
+; -------------------------------------------------------------------------
+; 4. SUBDOMENII ȘI ALIASE (CNAME Records)
+; -------------------------------------------------------------------------
+www IN  CNAME fanciful-macaron-a0bde5.netlify.app.
 
+; -------------------------------------------------------------------------
+; 5. CONFIGURARE EMAIL CU PRIORITĂȚI (MX Records)
+; -------------------------------------------------------------------------
 @   IN  MX  10 mail.rc251.utm.md.
 @   IN  MX  20 backup-mail.rc251.utm.md.
 
 mail IN A   193.226.50.12
 
+; -------------------------------------------------------------------------
+; 6. SECURIZARE PORTFOLIO & VERIFICARE DOMENIU (TXT Records)
+; -------------------------------------------------------------------------
 @   IN  TXT  "google-site-verification=UX251_UTM_ENGINEERING_VERIFIED"
 
-@   IN  TXT  "v=spf1 mx -all"
+; Varianta "-all" este mai sigură deoarece blochează toate serverele
+; neautorizate. Varianta "~all" este mai permisivă și permite surse suspecte.
+@   IN  TXT  "v=spf1 mx ip4:1.2.3.4 ~all"
 
 _dmarc IN TXT "v=DMARC1; p=reject; pct=100; rua=mailto:dmarc-reports@mocan-marius.rc251.utm.md"
 
+; -------------------------------------------------------------------------
+; 7. CONTROL CERTIFICARE SSL (CAA Records)
+; -------------------------------------------------------------------------
 @   IN  CAA  0 issue "letsencrypt.org"
-
 @   IN  CAA  0 iodef "mailto:security-alerts@mocan-marius.rc251.utm.md"
+```
+
+După ce îl copiezi în `asset/docs/dns_zone.txt`, salvează și rulează:
+
+```bash
+git add .
+git commit -m "Update DNS zone file"
+git push
+```
